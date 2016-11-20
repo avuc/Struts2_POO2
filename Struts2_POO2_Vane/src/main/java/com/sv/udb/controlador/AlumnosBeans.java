@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import com.sv.udb.modelo.Alumnos;
 import com.sv.udb.utils.HibernateUtil;
 /**
