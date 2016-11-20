@@ -63,4 +63,31 @@ public class AlumnosTodo extends  ActionSupport{
 		this.listAlum = alumnosManager.findAll();
 		return SUCCESS;
 	}
+        public ActionErrors validate(ActionMapping mapping,
+			HttpServletRequest request) {
+
+		// create a new instance of actionerrors
+		ActionErrors actionErrors = new ActionErrors();
+
+		// valdiate name
+		if (name.length() &lt; 3) {
+			actionErrors.add("name", new ActionMessage("error.name"));
+		}
+
+		// validate age
+		if (age == null || age &lt; 18) {
+			actionErrors.add("age", new ActionMessage("error.age"));
+		}
+
+		// return collection of action messages
+		return actionErrors;
+	}
+
+	public void reset(ActionMapping mapping, HttpServletRequest request) {
+
+		// reset properties
+		name = "";
+		age = 0;
+
+	}
 }
